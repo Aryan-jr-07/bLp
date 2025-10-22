@@ -16,6 +16,7 @@
         <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
         <a class="btn-primary" href="#contact">Get Started</a>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
       </nav>
     </div>
   </header>
@@ -32,7 +33,7 @@
           </div>
         </div>
         <div class="hero-image">
-          <img src="https://via.placeholder.com/500x350" alt="Hero Image"/>
+          <img src="Hero Image.jpg" alt="Hero Image" />
         </div>
       </div>
     </section>
@@ -90,4 +91,11 @@
     </div>
   </footer>
 </body>
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  });
+</script>
 </html>
