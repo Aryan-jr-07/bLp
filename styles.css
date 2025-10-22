@@ -200,10 +200,9 @@ header .container {
 }
 
 .footer {
-  background: #f8fafc;
+  background: white;
   text-align: center;
   padding: 20px 0;
-  color: var(--muted);
-  font-size: 14px;
+  font-size: 20px;
   margin-top: 60px;
 }
