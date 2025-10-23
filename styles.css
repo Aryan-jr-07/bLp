@@ -78,7 +78,7 @@ header .container {
   border-radius: var(--radius);
   font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease, background 0.3s ease;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
   background: white;
   color: var(--accent);
   border: 2px solid var(--accent);
@@ -87,6 +87,7 @@ header .container {
 .btn-primary:hover, .btn-outline:hover {
   background: var(--accent);
   color: white;
+  transform: rotate(-5deg);
 }
 
 .btn-primary::after,
@@ -250,4 +251,29 @@ body.dark .hero {
 body.dark .hero-text h1,
 body.dark .hero-text p {
   color: #f8fafc;
+}
+
+
+#interactive-text {
+  font-weight: 400;
+  font-family: 'Allura', cursive;
+  font-size: 48px;
+  background: linear-gradient(270deg, #1e40af, #b91c1c, #166534, #b45309, #7c3aed);
+  background-size: 1000% 1000%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 15s ease infinite;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#interactive-text:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
