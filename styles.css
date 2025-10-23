@@ -191,26 +191,39 @@ header .container {
 
 .gallery .grid-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr); /* exactly 4 columns */
+  gap: 15px;
   margin-top: 20px;
 }
+
 .thumb {
-  background: #e2e8f0;
-  height: 150px;
+  width: 100%;
+  height: 200px; /* fixed height */
+  overflow: hidden;
   border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--muted);
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* smooth hover effect */
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures the image covers the box without distortion */
+  display: block;
+  border-radius: var(--radius);
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .thumb:hover {
-  background: #cbd5e1;
-  transform: scale(1.02);
+  transform: scale(1.05); /* zoom effect */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* shadow for depth */
+}
+
+.thumb:hover img {
+  transform: scale(1.1); /* subtle zoom on image itself */
+  filter: brightness(1.1) contrast(1.05); /* brighten image slightly */
 }
 
 .contact-form {
@@ -312,6 +325,11 @@ body.dark .hero-text p {
 }
 
 .features h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 40px; /* optional spacing below the heading */
+}
+.gallery h2 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 40px; /* optional spacing below the heading */
