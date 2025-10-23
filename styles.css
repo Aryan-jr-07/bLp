@@ -226,25 +226,57 @@ header .container {
   filter: brightness(1.1) contrast(1.05); /* brighten image slightly */
 }
 
+
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
-}
-.contact-form input, .contact-form textarea {
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: var(--radius);
-  font-family: var(--ff);
-  font-size: 15px;
-  transition: all 0.2s ease;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0; /* remove padding */
+  background: transparent; /* remove background */
+  border-radius: 0; /* remove rounded corners */
+  box-shadow: none; /* remove shadow */
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form:hover {
+  /* transform: translateY(-8px); */
+  /* box-shadow: 0 25px 70px rgba(0,0,0,0.12); */
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 15px;
+  font-family: var(--ff);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.contact-form button {
+  padding: 18px;
+  border: none;
+  border-radius: 15px;
+  background: var(--accent);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
 }
 
 .footer {
@@ -333,4 +365,18 @@ body.dark .hero-text p {
   font-size: 30px;
   text-align: center;
   margin-bottom: 40px; /* optional spacing below the heading */
+}
+.contact-right h2 {
+  font-size: 32px; /* increased from 24px */
+  margin-bottom: 20px;
+}
+.contact-left h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+.contact-right p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 3.1;
+  margin-bottom: 10px; /* spacing between paragraphs */
 }

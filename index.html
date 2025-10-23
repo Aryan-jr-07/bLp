@@ -94,14 +94,25 @@
     </section>
 
     <section id="contact" class="contact section">
-      <div class="container">
-        <h2>Contact Us</h2>
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn-primary">Send Message</button>
-        </form>
+      <div class="container contact-container" style="display: flex; align-items: flex-start; gap: 50px; flex-wrap: wrap;">
+        <!-- Left side text -->
+        <div class="contact-left" style="flex: 1; min-width: 300px;">
+          <h2>Contact Us</h2>
+          <p>Email, call or complete the form to learn how Snappy can solve your messaging problem.</p>
+          <p style="margin-top: 20px;">your@gmail.com</p>
+          <p style="margin-top: 20px;">919-910-911</p>
+        </div>
+        <!-- Right side form -->
+        <div class="contact-right" style="flex: 1; min-width: 300px;">
+          <h2 style="margin-bottom: 0px;">Get in touch</h2>
+          <p>You can reach us anytime</p>
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
