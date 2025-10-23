@@ -63,46 +63,40 @@ header .container {
 .nav a:hover {
   color: var(--accent);
 }
-.btn-primary {
-  background: var(--accent);
-  color: white !important;
-  padding: 10px 18px;
+/* Button styles with sliding black overlay on hover */
+.btn-primary, .btn-outline {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  padding: 12px 22px;
   border-radius: var(--radius);
-  text-decoration: none;
   font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.btn-primary:hover {
-  background: #2563eb;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-.btn-outline {
-  border: 1px solid var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease, background 0.3s ease;
+  background: white;
   color: var(--accent);
-  padding: 10px 18px;
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s ease;
+  border: 2px solid var(--accent);
 }
 
-.btn-outline:hover {
-  background: rgba(59, 130, 246, 0.1);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+.btn-primary:hover, .btn-outline:hover {
+  background: var(--accent);
+  color: white;
 }
 
-.btn-outline:active {
-  transform: translateY(0);
-  box-shadow: none;
+.btn-primary::after,
+.btn-outline::after {
+  display: none;
+}
+
+
+.btn-primary span, .btn-outline span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary:hover span,
+.btn-outline:hover span {
+  color: white !important;
 }
 .hero {
   display: flex;
@@ -148,6 +142,7 @@ header .container {
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
 
 .card:hover {
   transform: translateY(-5px);
