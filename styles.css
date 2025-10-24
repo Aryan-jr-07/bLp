@@ -380,3 +380,35 @@ body.dark .hero-text p {
   line-height: 3.1;
   margin-bottom: 10px; /* spacing between paragraphs */
 }
+
+.gallery h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 40px; /* optional spacing below the heading */
+}
+.contact-right h2 {
+  font-size: 32px; /* increased from 24px */
+  margin-bottom: 20px;
+}
+.contact-left h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+.contact-right p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 3.1;
+  margin-bottom: 10px; /* spacing between paragraphs */
+}
+
+/* Blur background when hovering over navbar */
+body * {
+  transition: filter 0.3s ease;
+}
+
+header.site-header:hover ~ main,
+header.site-header:hover ~ section,
+header.site-header:hover ~ footer {
+  filter: blur(5px);
+  pointer-events: none;
+}
