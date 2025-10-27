@@ -50,7 +50,6 @@ header .container {
   text-decoration: none;
   font-weight: 500;
   position: relative;
-  transition: all 0.3s ease;
 }
 
 .nav a::after {
@@ -67,11 +66,8 @@ header .container {
 .nav a:hover::after {
   width: 100%;
 }
-
 .nav a:hover {
   color: var(--accent);
-  transform: scale(1.03);
-  text-shadow: 0 0 6px rgba(59,130,246,0.4);
 }
 /* Button styles with sliding black overlay on hover */
 .btn-primary, .btn-outline {
@@ -91,8 +87,7 @@ header .container {
 .btn-primary:hover, .btn-outline:hover {
   background: var(--accent);
   color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(59,130,246,0.3);
+  transform: rotate(-5deg);
 }
 
 .btn-primary::after,
@@ -126,11 +121,6 @@ header .container {
 .hero-text h1 {
   font-size: 42px;
   margin-bottom: 16px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-.hero-text:hover h1 {
-  transform: scale(1.05);
-  color: var(--accent);
 }
 .hero-text p {
   color: var(--muted);
@@ -141,11 +131,6 @@ header .container {
   width: 100%;
   border-radius: var(--radius);
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.hero-image img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 .section {
   padding: 80px 0;
@@ -188,8 +173,9 @@ header .container {
 }
 
 .features .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transform: translateY(-10px) rotate(-3deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.5s ease;
 }
 
 .features .card h3 {
@@ -201,52 +187,6 @@ header .container {
 .features .card p {
   color: var(--muted);
   line-height: 1.5;
-}
-
-/* About section styling */
-#about {
-  background: #ffffff;
-  padding: 100px 0;
-  text-align: center;
-}
-
-#about .container {
-  max-width: 900px;
-}
-
-#about h2 {
-  font-size: 36px;
-  margin-bottom: 25px;
-  color: #000000;
-  position: relative;
-  display: inline-block;
-}
-
-
-#about p {
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  font-family: 'Nunito';
-  font-weight: 400;
-  letter-spacing: 0.3px;
-}
-
-#about p:last-child {
-  margin-bottom: 0;
-}
-
-body.dark #about {
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-}
-
-body.dark #about h2 {
-  color: #60a5fa;
-}
-
-body.dark #about p {
-  color: #cbd5e1;
 }
 
 .gallery .grid-gallery {
@@ -282,8 +222,8 @@ body.dark #about p {
 }
 
 .thumb:hover img {
-  transform: scale(1.1);
-  filter: brightness(1.1);
+  transform: scale(1.1); /* subtle zoom on image itself */
+  filter: brightness(1.1) contrast(1.05); /* brighten image slightly */
 }
 
 
@@ -461,6 +401,33 @@ body.dark .hero-text p {
   margin-bottom: 10px; /* spacing between paragraphs */
 }
 
-section, .card, .thumb, button, a {
-  transition: all 0.25s ease-in-out;
+/* Blur background when hovering over navbar */
+body * {
+  transition: filter 0.3s ease;
+}
+
+header.site-header:hover ~ main,
+header.site-header:hover ~ section,
+header.site-header:hover ~ footer {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* About section styles */
+.about {
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--muted);
 }
